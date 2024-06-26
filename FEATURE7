@@ -1,0 +1,44 @@
+Feature: Acceso al chat en tiempo real con habitantes locales
+
+Scenario: Acceso al chat en tiempo real
+Given que el estudiante desea interactuar con habitantes locales
+When selecciona la opción de "chat en tiempo real"
+Then podrá iniciar una conversación en tiempo real con un habitante local
+And podrá resolver sus dudas
+And podrá recibir recomendaciones
+
+Examples:
+| Destino Virtual       | Tipo de Duda                                | Recomendación Recibida                                           |
+|-----------------------|---------------------------------------------|------------------------------------------------------------------|
+| París Virtual         | Mejores cafés y restaurantes                | "Visita el Café de Flore y Le Comptoir du Relais"                 |
+| Gran Cañón Virtual    | Senderos más accesibles para caminatas      | "El South Rim Trail es ideal para principiantes"                  |
+| Tokio Nocturno Virtual| Lugares para disfrutar la vida nocturna     | "Explora Shibuya y Shinjuku para la mejor vida nocturna"          |
+| Safari en África Virtual | Mejor época para avistamiento de animales | "De junio a octubre es la mejor época para safaris"               |
+
+Scenario: Iniciar una conversación en tiempo real
+Given que el estudiante ha seleccionado la opción de "chat en tiempo real"
+When el estudiante envía un mensaje inicial
+Then el habitante local responderá al mensaje en tiempo real
+And el estudiante podrá continuar la conversación para obtener más información
+
+Examples:
+| Destino Virtual       | Mensaje Inicial                                                     | Respuesta del Habitante Local                                         |
+|-----------------------|---------------------------------------------------------------------|-----------------------------------------------------------------------|
+| París Virtual         | "¿Cuáles son los mejores museos para visitar?"                      | "Te recomiendo el Louvre y el Museo de Orsay."                        |
+| Gran Cañón Virtual    | "¿Qué debo llevar para una caminata en el Gran Cañón?"              | "Lleva agua, protector solar y zapatos cómodos."                      |
+| Tokio Nocturno Virtual| "¿Dónde puedo encontrar buena comida callejera?"                   | "Dirígete a los mercados de Tsukiji y Ameyoko."                       |
+| Safari en África Virtual | "¿Es seguro realizar un safari en solitario?"                    | "Es mejor ir con un guía experimentado por seguridad."                |
+
+Scenario: Recibir recomendaciones personalizadas
+Given que el estudiante está conversando con un habitante local en tiempo real
+When el estudiante describe sus intereses específicos
+Then el habitante local proporcionará recomendaciones personalizadas
+And el estudiante podrá guardar estas recomendaciones para referencia futura
+
+Examples:
+| Destino Virtual       | Intereses Específicos                       | Recomendaciones Personalizadas                                        |
+|-----------------------|---------------------------------------------|-----------------------------------------------------------------------|
+| París Virtual         | Historia y arquitectura                     | "No te pierdas el Palacio de Versalles y la Sainte-Chapelle."         |
+| Gran Cañón Virtual    | Fotografía de paisajes                      | "El Desert View Watchtower ofrece vistas espectaculares."             |
+| Tokio Nocturno Virtual| Cultura tradicional japonesa                | "Visita el templo Senso-ji y el santuario Meiji."                     |
+| Safari en África Virtual | Observación de aves                      | "El Parque Nacional de Amboseli es ideal para observar aves."         |
