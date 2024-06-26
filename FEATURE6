@@ -1,0 +1,16 @@
+Feature: Acceso a bibliotecas virtuales de recursos
+
+Scenario: Consultar información relevante en bibliotecas virtuales de recursos
+  Given que soy el dueño de una agencia de viajes
+  And deseo proporcionar acceso a bibliotecas virtuales de recursos
+  When el personal acceda a la biblioteca virtual de recursos
+  Then podrán consultar información relevante en cualquier momento
+
+  Examples:
+    | Destino           | Información Consultada                               |
+    | París             | Mejores restaurantes para comida francesa            |
+    | Gran Cañón        | Rutas de senderismo más populares                    |
+    | Tokio             | Festivales y eventos culturales del próximo mes      |
+    | Safari en África  | Mejores momentos para avistamiento de animales       |
+
+  
